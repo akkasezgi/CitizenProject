@@ -8,4 +8,4 @@
 7. Controller class içinden Service ile iletişim kuracak CRUD islemleri eklendi. 
 8. Service icin kullanılan iki class var. IService ve ServiceManager. Genel kullanıma sahip iki class olup, extend ederek servis tanımlamalarıı yapıldı.
 9. Children eklemek icin ekstra bir method tanımlandı. Citizen save dedikten sonra kisini cocuk ataması yapabiliyoruz.
-10. React projesi hazırlandı. Ancak react eğitimini yakın zamanda tamamlayacagım icin, acemi olan noktaların göz ardı edilmesini dilerim. 
+10. React projesi hazırlandı. Listeleme,filtreleme ve kayıt sayısı görüntüleme tanımlandı.

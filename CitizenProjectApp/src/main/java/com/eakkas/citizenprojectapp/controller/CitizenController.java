@@ -17,6 +17,7 @@ import static com.eakkas.citizenprojectapp.constants.RestApi.*;
 @RestController
 @RequestMapping(CITIZEN)
 @RequiredArgsConstructor
+@CrossOrigin
 public class CitizenController {
 
     private final CitizenService citizenService;

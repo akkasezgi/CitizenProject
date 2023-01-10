@@ -4,65 +4,35 @@ import React, { useState, useEffect } from 'react'
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 
 const columns: GridColDef[] = [
-  { field: 'isCitizen', headerName: 'Citizen', type: 'boolean', width: 70 },
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'Name', headerName: 'Name', width: 130 },
-  { field: 'hasDrivingLicense', headerName: 'Has Driving License', type: 'boolean', width: 70 },
+  { field: 'citizen', headerName: 'Citizen', type: 'boolean', width: 150 },
+  { field: 'id', headerName: 'ID', width: 150 },
+  { field: 'name', headerName: 'Name', width: 150 },
+  { field: 'hasDrivingLicence', headerName: 'Has Driving License', type: 'boolean', width: 150 },
   {
-    field: 'Children',
+    field: 'children',
     headerName: 'Children',
     description: 'This column has a value getter and is not sortable.',
     sortable: false,
     width: 460,
     valueGetter: (params: GridValueGetterParams) =>
-        // Object.keys(params.row.Children)
+        Object.keys(params.row.children || [] )
 
-        `${Object.keys(params.row.Children) || 'qq'}`,
   },
 ];
 
-const rows1 = [
-  {
-    "isCitizen": true,
-    "Name": "John Smith",
-    "id": 123456,
-    "Children": {
-      "Mike Smith": 123457,
-      "Jessica Smith": 123458,
-      "Sarah Smith": 123459
-    },
-    "hasDrivingLicense": true
-  },
-  {
-    "isCitizen": false,
-    "Name": "Michael Tall",
-    "id": 123461,
-    "Children": {
-    },
-    "hasDrivingLicense": false
-  },
-  {
-    "isCitizen": false,
-    "Name": "Joe Bloggs",
-    "id": 123462,
-    "Children": {
-      "Sarah Bloggs": 123463
-    },
-    "hasDrivingLicense": true
-  }
-];
+
 
 function App() {
   const [tableData, setTableData] = useState([])
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("http://localhost:8085/api/v1/citizen/findall")
         .then((data) => data.json())
         .then((data) => setTableData(data))
 
   }, [])
 
-  // console.log(tableData)
+   console.log(tableData)
 
   return (
       <div style={{ height: 700, width: '100%' }}>

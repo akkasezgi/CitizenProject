@@ -1,5 +1,4 @@
 # CitizenProject
-
 1- src dosyası react dosyasıdır.
 2- Entity class oluşturuldu. Gerekli tüm annotations eklendi.
 3- Repository class oluşturuldu. Extend edildi.
